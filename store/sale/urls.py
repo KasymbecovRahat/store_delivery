@@ -5,7 +5,8 @@ from .views import *
 routers = routers.DefaultRouter()
 
 routers.register(r'users/', UserProfileViewSet, basename='user_list'),
-routers.register(r'store_list/', StoreViewSet, basename='store_list'),
+routers.register(r'store_list/', StoreListViewSet, basename='store_list'),
+routers.register(r'store_detail/', StoreListViewSet, basename='store_detail'),
 routers.register(r'product/', ProductViewSet, basename='product_list'),
 routers.register(r'orders/', OrdersViewSet, basename='orders_list'),
 routers.register(r'rating', RatingViewSet, basename='rating_list'),

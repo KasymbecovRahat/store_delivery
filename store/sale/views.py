@@ -50,13 +50,22 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = UserProfileSerialazer()
 
 
-class StoreViewSet(viewsets.ModelViewSet):
+class StoreListViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
-    serializer_class = StoreSerialazer
+    serializer_class = StoreListSerialazer
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
     search_fields = ['store_name']
     filterset_class = StoreFilterSet
-    permission_classes = [CheckCrud]
+    permission_classes = [CheckCrud, CheckOwnerStore]
+
+
+class StoreDetailListViewSet(viewsets.ModelViewSet):
+    queryset = Store.objects.all()
+    serializer_class = StoreDetailSerialazer
+    filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
+    search_fields = ['store_name']
+    filterset_class = StoreFilterSet
+    permission_classes = [CheckCrud, CheckOwnerStore, permissions.IsAuthenticatedOrReadOnly]
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -66,36 +75,41 @@ class ProductViewSet(viewsets.ModelViewSet):
     search_fields = ['product_name']
     filterset_class = ProductFilterSet
     ordering_fields = ['price']
-    permission_classes = [CheckCrud]
+    permission_classes = [CheckCrud, permissions.IsAuthenticatedOrReadOnly]
 
 
 class OrdersViewSet(viewsets.ModelViewSet):
     queryset = Orders.objects.all()
     serializer_class = OrdersSerialazer
-    permission_classes = [CheckCrud]
+    permission_classes = [CheckCrud, CheckClientOrders, CheckOrders, permissions.IsAuthenticatedOrReadOnly,
+                          CheckClient]
 
 
 class CourierViewSet(viewsets.ModelViewSet):
     queryset = Courier.objects.all()
     serializer_class = CourierSerialazer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerialazer
-    permission_classes = [CheckOwner]
+    permission_classes = [CheckOwner, permissions.IsAuthenticatedOrReadOnly]
 
 
 class CartViewSet(viewsets.ModelViewSet):
     queryset = Cart.objects.all()
     serializer_class = CartSerialazer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class CarItemViewSet(viewsets.ModelViewSet):
     queryset = CarItem.objects.all()
     serializer_class = CartItemSerialazer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerialazer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

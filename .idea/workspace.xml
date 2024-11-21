@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b6ae201-8a47-4bdf-b713-8dce0fbfa3c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject26.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/sale/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/sale/permission.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/sale/serialazers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/sale/translation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/sale/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/sale/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/permission.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/sale/permission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/serialazers.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/sale/serialazers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/sale/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/sale/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/sale/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/store/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/store/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

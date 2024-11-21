@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = ('username', 'email', 'password', 'first_name',
-                  'last_name', 'phone_number')
+                  'last_name', 'phonenumber')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
@@ -62,7 +62,17 @@ class ProductSerialazer(serializers.ModelSerializer):
         return obj.get_average_raitings()
 
 
-class StoreSerialazer(serializers.ModelSerializer):
+class StoreListSerialazer(serializers.ModelSerializer):
+    average_raitings = serializers.SerializerMethodField()
+    product = ProductSerialazer(read_only=True, many=True)
+
+    class Meta:
+        model = Store
+        fields = ['store_name', 'average_raitings',
+                'product', ]
+
+
+class StoreDetailSerialazer(serializers.ModelSerializer):
     average_raitings = serializers.SerializerMethodField()
     product = ProductSerialazer(read_only=True, many=True)
     category = CategorySerialazer(read_only=True, many=True)

@@ -33,9 +33,10 @@ class Store(models.Model):
     contact_info = models.TextField()
     address = models.CharField(max_length=20)
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    store_image = models.ImageField(upload_to='store_photo')
 
     def __str__(self):
-        return f'{self.store_name}, {self.adress}'
+        return f'{self.store_name}, {self.address}'
 
 
 class Category(models.Model):
@@ -50,6 +51,7 @@ class Product(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE, related_name='product')
     product_photo = models.ImageField(upload_to='product_image/')
     product_category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
+
 
     def __str__(self):
         return f'{self.product_name} {self.store}'
